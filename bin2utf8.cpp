@@ -175,10 +175,7 @@ int decodeFile(std::string filename, std::string BCLFile) {
     //While there is another utf-8 character...
     while(charCode = utf8::unchecked::next(utf8iter)) {
       char result = BCLCharCodeToByte(charCode, BCLCharCodes, BCLByte);
-      //Don't write anything if the code is 0
-      if (result != 0){
-        fileWriter << result;
-      }
+      fileWriter << result;
     }
 
     return 0;
